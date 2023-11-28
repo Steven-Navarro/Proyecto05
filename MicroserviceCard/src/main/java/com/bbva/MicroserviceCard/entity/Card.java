@@ -26,8 +26,8 @@ public class Card {
 
     private BigDecimal saldoDisponible;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "customerID")
-    private Customer customer;*/
+    private Customer customer;
 
 }
