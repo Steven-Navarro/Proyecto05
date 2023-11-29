@@ -1,4 +1,4 @@
-package com.bbva.MicroserviceEstablishment.DTO;
+package com.bbva.MicroserviceEstablishment.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

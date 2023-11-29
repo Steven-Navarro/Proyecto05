@@ -1,5 +1,6 @@
 package com.bbva.MicroserviceCard.controllers;
 
+import com.bbva.MicroserviceCard.dto.CardDTO;
 import com.bbva.MicroserviceCard.entity.Card;
 import com.bbva.MicroserviceCard.repositories.ICardRepository;
 import com.bbva.MicroserviceCard.services.ICardService;
@@ -20,15 +21,15 @@ public class CardController {
     private ICardService cardService;
 
     @GetMapping("/{cardID}")
-    public ResponseEntity<Card> obtenerTarjeta(@PathVariable Integer cardID) {
-        Card customer = cardService.getCard(cardID);
-        return ResponseEntity.ok(customer);
+    public ResponseEntity<CardDTO> obtenerTarjeta(@PathVariable Integer cardID) {
+        CardDTO cardDTO = cardService.getCard(cardID);
+        return ResponseEntity.ok(cardDTO);
     }
 
     @GetMapping
-    public ResponseEntity<List<Card>> listarTarjetas() {
-        List<Card> cards = cardService.getAllCards();
-        return ResponseEntity.ok(cards);
+    public ResponseEntity<List<CardDTO>> listarTarjetas() {
+        List<CardDTO> cardsDTO = cardService.getAllCards();
+        return ResponseEntity.ok(cardsDTO);
     }
 
 }

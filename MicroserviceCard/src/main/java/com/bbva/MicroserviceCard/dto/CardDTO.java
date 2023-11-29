@@ -1,11 +1,7 @@
-package com.bbva.MicroserviceCard.DTO;
+package com.bbva.MicroserviceCard.dto;
 
 import com.bbva.MicroserviceCard.entity.CardType;
 import com.bbva.MicroserviceCard.entity.Customer;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

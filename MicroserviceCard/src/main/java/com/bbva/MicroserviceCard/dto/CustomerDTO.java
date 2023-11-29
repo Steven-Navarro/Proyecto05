@@ -1,4 +1,4 @@
-package com.bbva.MicroserviceCard.DTO;
+package com.bbva.MicroserviceCard.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
