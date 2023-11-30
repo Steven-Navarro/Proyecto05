@@ -1,13 +1,13 @@
-package com.bbva.MicroservicePurchasing;
+package com.bbva.MicroservicePurchase;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MicroservicePurchasingApplication {
+public class MicroservicePurchaseApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroservicePurchasingApplication.class, args);
+		SpringApplication.run(MicroservicePurchaseApplication.class, args);
 	}
 
 }

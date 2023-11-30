@@ -1,12 +1,12 @@
 package com.bbva.MicroserviceEstablishment.service;
 
-import com.bbva.MicroserviceEstablishment.entity.Establishment;
+import com.bbva.MicroserviceEstablishment.dto.EstablishmentDTO;
 
 import java.util.List;
 
 public interface IEstablishmentService {
 
-    List<Establishment> getAllEstablishment();
+    List<EstablishmentDTO> getAllEstablishment();
 
-    Establishment getCard(Integer EstablishmentID);
+    EstablishmentDTO getEstablishment(Integer establishmentID);
 }

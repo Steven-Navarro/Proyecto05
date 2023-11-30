@@ -1,13 +1,16 @@
-package com.bbva.MicroservicePurchasing.models;
+package com.bbva.MicroservicePurchase.entity;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "compras")
 public class Purchase implements Serializable {
@@ -16,7 +19,7 @@ public class Purchase implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idCompra;
+    private Integer purchaseID;
     private Date fecha;
     private BigDecimal montoTotal;
 
