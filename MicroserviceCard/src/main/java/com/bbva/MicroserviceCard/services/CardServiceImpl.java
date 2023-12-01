@@ -21,7 +21,16 @@ public class CardServiceImpl implements ICardService {
     @Override
     public List<CardDTO> getAllCards() {
         List<Card> cards = cardRepository.findAll();
-        List<CardDTO> cardsDTO = cardMapper.ListToDtoList(cards);
+
+        Card firstCard = cards.get(0);
+        System.out.println("Información de la primera tarjeta:");
+        System.out.println("Card ID: " + firstCard.getCardID());
+        System.out.println("Número de tarjeta: " + firstCard.getNumeroTarjeta());
+        System.out.println("Tipo de tarjeta: " + firstCard.getTipo());
+        System.out.println("Saldo disponible: " + firstCard.getSaldoDisponible());
+        System.out.println("Customer ID: " + (firstCard.getCustomer() != null ? firstCard.getCustomer().getCustomerID() : "N/A"));
+
+        List<CardDTO> cardsDTO = cardMapper.toDtoList(cards);
 
         return cardsDTO;
     }

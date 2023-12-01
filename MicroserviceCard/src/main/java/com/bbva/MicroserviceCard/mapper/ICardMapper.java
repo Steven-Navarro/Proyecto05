@@ -6,9 +6,9 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "sping")
+@Mapper(componentModel = "spring")
 public interface ICardMapper {
     Card toEntity(CardDTO cardDTO);
     CardDTO toDTO(Card card);
-    List<CardDTO> ListToDtoList(List<Card> cards);
+    List<CardDTO> toDtoList(List<Card> cards);
 }

@@ -2,26 +2,21 @@ package com.bbva.MicroserviceCard.dto;
 
 import com.bbva.MicroserviceCard.entity.CardType;
 import com.bbva.MicroserviceCard.entity.Customer;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import lombok.*;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CardDTO {
+//@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+public class CardDTO implements Serializable {
 
     private Integer cardID;
-
     private String numeroTarjeta;
-
     private CardType tipo;
-
     private BigDecimal saldoDisponible;
-
     private Customer customer;
 }
