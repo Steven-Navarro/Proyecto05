@@ -32,6 +32,14 @@ public class CardServiceImpl implements ICardService {
 
         List<CardDTO> cardsDTO = cardMapper.toDtoList(cards);
 
+        CardDTO firstCard2 = cardsDTO.get(0);
+        System.out.println("Información de la primera tarjeta:");
+        System.out.println("Card ID: " + firstCard2.getCardID());
+        System.out.println("Número de tarjeta: " + firstCard2.getNumeroTarjeta());
+        System.out.println("Tipo de tarjeta: " + firstCard2.getTipo());
+        System.out.println("Saldo disponible: " + firstCard2.getSaldoDisponible());
+        System.out.println("Customer ID: " + (firstCard2.getCustomer() != null ? firstCard2.getCustomer().getCustomerID() : "N/A"));
+
         return cardsDTO;
     }
 
