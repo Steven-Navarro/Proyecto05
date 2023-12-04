@@ -1,5 +1,6 @@
 package com.bbva.MicroserviceCustomer.controllers;
 
+import com.bbva.MicroserviceCustomer.dto.CustomerDTO;
 import com.bbva.MicroserviceCustomer.entity.Customer;
 import com.bbva.MicroserviceCustomer.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,14 @@ public class CustomerController {
     private ICustomerService customerService;
 
     @GetMapping("/{customerID}")
-    public ResponseEntity<Customer> obtenerCliente(@PathVariable String customerID) {
-        Customer customer = customerService.getCustomer(customerID);
-        return ResponseEntity.ok(customer);
+    public ResponseEntity<CustomerDTO> obtenerCliente(@PathVariable String customerID) {
+        CustomerDTO customerDTO = customerService.getCustomer(customerID);
+        return ResponseEntity.ok(customerDTO);
     }
 
     @GetMapping
-    public ResponseEntity<List<Customer>> listarClientes() {
-        List<Customer> customers = customerService.getAllCustomers();
-        return ResponseEntity.ok(customers);
+    public ResponseEntity<List<CustomerDTO>> listarClientes() {
+        List<CustomerDTO> customerDTOS = customerService.getAllCustomers();
+        return ResponseEntity.ok(customerDTOS);
     }
 }

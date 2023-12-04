@@ -18,7 +18,6 @@ public class PurchaseServiceImpl implements IPurchaseService {
     @Autowired
     private IPurchaseMapper purchaseMapper;
 
-
     @Override
     public List<PurchaseDTO> getAllPurchase() {
         List<Purchase> purchases = purchaseRepository.findAll();

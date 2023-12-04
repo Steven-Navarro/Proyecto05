@@ -1,13 +1,14 @@
 package com.bbva.MicroserviceCustomer.service;
 
+import com.bbva.MicroserviceCustomer.dto.CustomerDTO;
 import com.bbva.MicroserviceCustomer.entity.Customer;
 
 import java.util.List;
 
 public interface ICustomerService {
 
-    List<Customer> getAllCustomers();
+    List<CustomerDTO> getAllCustomers();
 
-    Customer getCustomer(String customerID);
+    CustomerDTO getCustomer(String customerID);
 
 }

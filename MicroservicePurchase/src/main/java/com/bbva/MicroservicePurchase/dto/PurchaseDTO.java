@@ -1,5 +1,6 @@
 package com.bbva.MicroservicePurchase.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,11 +13,12 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class PurchaseDTO {
 
-    private Integer purchaseID;
+    private Integer purchaseId;
 
-    private Date fecha;
+    private Date date;
 
-    private BigDecimal montoTotal;
+    private BigDecimal totalAmount;
 }

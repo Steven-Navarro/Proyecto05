@@ -23,9 +23,9 @@ public class EstablishmentController {
 
     @Operation(summary = "Obtener establecimiento", description = "Obtiene el establecimiento del Id ingresado.")
     @ApiResponse(responseCode = "200", description = "Operación exitosa", content = @Content(mediaType = "application/json"))
-    @GetMapping("/establishmentID")
-    public ResponseEntity<EstablishmentDTO> obtenerEstablecimiento(@PathVariable Integer establishmentID) {
-        EstablishmentDTO establishmentDTO = establishmentService.getEstablishment(establishmentID);
+    @GetMapping("/{establishmentId}")
+    public ResponseEntity<EstablishmentDTO> obtenerEstablecimiento(@PathVariable Integer establishmentId) {
+        EstablishmentDTO establishmentDTO = establishmentService.getEstablishment(establishmentId);
         return ResponseEntity.ok(establishmentDTO);
     }
 

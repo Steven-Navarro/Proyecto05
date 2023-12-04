@@ -1,5 +1,6 @@
 package com.bbva.MicroserviceCustomer.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -14,9 +15,16 @@ import lombok.*;
 public class Customer {
 
     @Id
-    private String customerID;
-    private String nombre;
-    private String apellido;
+    @Column(name = "customer_id")
+    private String customerId;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
     private String email;
-    private String telefono;
+
+    private String phone;
 }

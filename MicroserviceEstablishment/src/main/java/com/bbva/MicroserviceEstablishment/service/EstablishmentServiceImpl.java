@@ -20,15 +20,19 @@ public class EstablishmentServiceImpl implements IEstablishmentService {
 
     @Override
     public List<EstablishmentDTO> getAllEstablishment() {
+
         List<Establishment> establishments = establishmentRepository.findAll();
-        List<EstablishmentDTO> establishmentsDTO = establishmentMapper.ListToDtoList(establishments);
-        return establishmentsDTO;
+        List<EstablishmentDTO> establishmentDTOS = establishmentMapper.ListToDtoList(establishments);
+
+        return establishmentDTOS;
     }
 
     @Override
     public EstablishmentDTO getEstablishment(Integer establishmentID) {
+
         Establishment establishment = establishmentRepository.findById(establishmentID).orElseThrow();
         EstablishmentDTO establishmentDTO = establishmentMapper.toDTO(establishment);
+
         return establishmentDTO;
     }
 }

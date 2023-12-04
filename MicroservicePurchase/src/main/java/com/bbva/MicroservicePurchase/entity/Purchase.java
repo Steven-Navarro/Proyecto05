@@ -12,15 +12,19 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "compras")
+@Table(name = "purchases")
 public class Purchase implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer purchaseID;
-    private Date fecha;
-    private BigDecimal montoTotal;
+    @Column(name = "purchase_id")
+    private Integer purchaseId;
+
+    private Date date;
+
+    @Column(name = "total_amount")
+    private BigDecimal totalAmount;
 
 }

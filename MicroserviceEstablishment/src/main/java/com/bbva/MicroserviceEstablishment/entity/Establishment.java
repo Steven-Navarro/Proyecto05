@@ -1,5 +1,6 @@
 package com.bbva.MicroserviceEstablishment.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -17,9 +18,10 @@ import lombok.Setter;
 public class Establishment {
 
     @Id
-    private Integer establishmentID;
+    @Column(name = "establishment_id")
+    private Integer establishmentId;
 
-    private String nombre;
+    private String name;
 
-    private String direccion;
+    private String address;
 }

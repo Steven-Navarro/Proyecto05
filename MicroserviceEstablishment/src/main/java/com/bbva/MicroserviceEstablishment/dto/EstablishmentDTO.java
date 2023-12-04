@@ -1,5 +1,6 @@
 package com.bbva.MicroserviceEstablishment.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class EstablishmentDTO {
 
-    private Integer establishmentID;
+    private Integer establishmentId;
 
-    private String nombre;
+    private String name;
 
-    private String direccion;
+    private String address;
 }
