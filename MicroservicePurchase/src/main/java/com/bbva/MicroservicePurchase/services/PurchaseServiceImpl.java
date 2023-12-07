@@ -6,6 +6,7 @@ import com.bbva.MicroservicePurchase.mapper.IPurchaseMapper;
 import com.bbva.MicroservicePurchase.repositories.IPurchaseRepository;
 import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class PurchaseServiceImpl implements IPurchaseService {
     private IPurchaseMapper purchaseMapper;
 
     @Override
+    @Transactional(readOnly = true)
     public List<PurchaseDTO> getAllPurchase() {
         List<Purchase> purchases = purchaseRepository.findAll();
         List<PurchaseDTO> purchasesDTO = purchaseMapper.ListToDtoList(purchases);
@@ -26,6 +28,7 @@ public class PurchaseServiceImpl implements IPurchaseService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public PurchaseDTO getPurchase(Integer purchaseID) {
         Purchase purchase = purchaseRepository.findById(purchaseID).orElseThrow();
         PurchaseDTO purchaseDTO = purchaseMapper.toDTO(purchase);

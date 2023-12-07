@@ -6,6 +6,7 @@ import com.bbva.MicroserviceEstablishment.mapper.IEstablishmentMapper;
 import com.bbva.MicroserviceEstablishment.repositories.IEstablishmentRepository;
 import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class EstablishmentServiceImpl implements IEstablishmentService {
     private IEstablishmentMapper establishmentMapper;
 
     @Override
+    @Transactional(readOnly = true)
     public List<EstablishmentDTO> getAllEstablishment() {
 
         List<Establishment> establishments = establishmentRepository.findAll();
@@ -28,6 +30,7 @@ public class EstablishmentServiceImpl implements IEstablishmentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public EstablishmentDTO getEstablishment(Integer establishmentID) {
 
         Establishment establishment = establishmentRepository.findById(establishmentID).orElseThrow();

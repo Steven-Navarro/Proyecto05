@@ -6,6 +6,8 @@ import com.bbva.MicroserviceCard.mapper.ICardMapper;
 import com.bbva.MicroserviceCard.repositories.ICardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -18,7 +20,11 @@ public class CardServiceImpl implements ICardService {
     @Autowired
     private ICardMapper cardMapper;
 
+    @Autowired
+    private RestTemplate clienteRest;
+
     @Override
+    @Transactional(readOnly = true)
     public List<CardDTO> getAllCards() {
 
         List<Card> cards = cardRepository.findAll();
@@ -28,6 +34,7 @@ public class CardServiceImpl implements ICardService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public CardDTO getCard(Integer cardID) {
 
         Card card = cardRepository.findById(cardID).orElseThrow();

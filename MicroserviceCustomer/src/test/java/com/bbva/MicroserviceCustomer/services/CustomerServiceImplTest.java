@@ -1,10 +1,10 @@
 package com.bbva.MicroserviceCustomer.services;
-import com.bbva.MicroserviceCustomer.dto.CustomerDTO;
-import com.bbva.MicroserviceCustomer.entity.Customer;
+
 import com.bbva.MicroserviceCustomer.mapper.ICustomerMapper;
-import com.bbva.MicroserviceCustomer.repository.ICustomerRepository;
+import com.bbva.MicroserviceCustomer.repositories.ICustomerRepository;
 import com.bbva.MicroserviceCustomer.service.CustomerServiceImpl;
-import org.junit.jupiter.api.BeforeEach;
+import com.bbva.MicroserviceCustomer.entity.Customer;
+import com.bbva.MicroserviceCustomer.dto.CustomerDTO;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -26,11 +26,6 @@ public class CustomerServiceImplTest {
 
     @InjectMocks
     private CustomerServiceImpl customerService;
-
-    @BeforeEach
-    public void setUp() {
-        // Configuración común antes de cada prueba si es necesaria
-    }
 
     @Test
     public void testGetAllCustomers() {

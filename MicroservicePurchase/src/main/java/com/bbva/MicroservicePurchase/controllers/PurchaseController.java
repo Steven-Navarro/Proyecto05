@@ -9,14 +9,12 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/purchases")
 public class PurchaseController {
 
@@ -52,7 +50,7 @@ public class PurchaseController {
         return ResponseEntity.ok(purchaseDTO);
     }
 
-    @Operation(summary = "Obtener todas las compras realizadas", description = "Obtiene la lista completa de compras.")
+    @Operation(summary = "Obtener compras", description = "Obtiene la lista completa de compras realizadas.")
     @ApiResponse(responseCode = "200", description = "Operación exitosa", content = @Content(mediaType = "application/json"))
     @GetMapping
     public ResponseEntity<List<PurchaseDTO>> listarCompras() {

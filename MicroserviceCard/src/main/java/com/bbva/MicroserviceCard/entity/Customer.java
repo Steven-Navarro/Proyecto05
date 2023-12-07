@@ -11,20 +11,20 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name = "customers")
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Entity
+//@Table(name = "customers")
 public class Customer {
 
-    @Id
-    @Column(name = "customer_id")
+    //@Id
+    //@Column(name = "customer_id")
     private String customerId;
 
-    @Column(name = "first_name")
+    //@Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "last_name")
+    //@Column(name = "last_name")
     private String lastName;
 
     private String email;

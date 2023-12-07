@@ -22,6 +22,7 @@ public class Purchase implements Serializable {
     @Column(name = "purchase_id")
     private Integer purchaseId;
 
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     @Column(name = "total_amount")
